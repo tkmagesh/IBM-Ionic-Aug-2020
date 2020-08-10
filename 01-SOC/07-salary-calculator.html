@@ -59,6 +59,10 @@
                 this._subscribers[attrName].push(callback);
             }
 
+            unsubscribe(attrName, callback){
+                this._subscribers[attrName] = this._subscribers[attrName].filter(cb => cb !== callback);
+            }
+
             //behavior
             calculate(){
                 var gross = this.get('basic') + this.get('hra') + this.get('da');
