@@ -1,0 +1,16 @@
+Interface
+    IONIC - components
+    Angular - State + Behavior + UI (IONIC)
+
+Cordova / Capacitor
+    - packaging
+    - inteface for native apis
+
+UI
+    Maintainable
+
+HTML + CSS + JS (JQuery)
+
+Salary Calculator
+    Basic, Hra, Da , Tax (%)
+    Basic + Hra + Da - Tax = Salary
