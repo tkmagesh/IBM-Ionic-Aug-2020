@@ -14,3 +14,33 @@ HTML + CSS + JS (JQuery)
 Salary Calculator
     Basic, Hra, Da , Tax (%)
     Basic + Hra + Da - Tax = Salary
+
+
+JavaScript
+    Data Types
+        Number, string, boolean, object, function, undefined
+
+    Constructs
+        var, if else, switch case, while, for, try catch finally, throw, function
+
+    APIs
+        Date, Array, Math, RegEx, timer (setTimeout, clearTimeout, setInterval, clearInterval, Error)
+
+
+ES6 (ECMAScript 6 / ES2015/ ESNext )
+1. let
+2. const
+3. destructuring (array)
+4. rest operator (array)
+5. spread operator (array)
+6. destructuring (object)
+7. rest operator (object)
+8. spread operator (object)
+9. default arguments
+10. arrow functions
+11. object construct
+12. template strings
+13. classes
+
+http://es6-features.org
+
