@@ -27,7 +27,18 @@
         class SalaryCalculatorModel{
 
             //state
-            basic = 0;
+            _basic = 0;
+            onBasicChange = null;
+            getBasic(){
+                return this._basic;
+            }
+            setBasic(value){
+                if (this._basic === value) return;
+                this._basic = value;
+                if (typeof this.onBasicChange === 'function')
+                    this.onBasicChange();
+            }
+
             hra = 0;
             da = 0;
             tax = 0;
@@ -37,7 +48,7 @@
 
             //behavior
             calculate(){
-                var gross = this.basic + this.hra + this.da;
+                var gross = this.getBasic() + this.hra + this.da;
                 var net = (gross * ((100-this.tax)/100));
                 this.salary = net;
                 if (typeof this.onSalaryChange === 'function')
@@ -52,8 +63,7 @@
 
             //Reacting to User actions
             $('#txtBasic').on('input', function(){
-                model.basic = parseInt($(this).val());
-                $('#tdBasic').text(model.basic);
+                model.setBasic(parseInt($(this).val()));
             });
 
             $('#txtHra').on('input', function(){
@@ -82,6 +92,10 @@
 
             model.onSalaryChange = function(){
                 $('#tdSalary').text(model.salary);
+            };
+
+            model.onBasicChange = function(){
+                $('#tdBasic').text(model.getBasic());
             };
         });
     </script>
