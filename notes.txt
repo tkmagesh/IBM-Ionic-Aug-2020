@@ -44,3 +44,145 @@ ES6 (ECMAScript 6 / ES2015/ ESNext )
 
 http://es6-features.org
 
+
+TypeScript
+    JavaScript = NOT type safe
+
+class Calculator{
+    public static int add(int x, int y){
+        return x + y;
+    }
+}
+
+
+function add(x, y){
+    return x + y;
+}
+
+add(10,20)
+add(10,"20")
+add(10,"abc")
+add([10,20],[30,40])
+add([10,20],[30,"40"])
+add([10,20],[30,"abc"])
+add([10,20],[30,["abc",40]])
+add(function(){ return 10;}, function(){ return 20; })
+add(function(){ return [10,20];},function(){ return [30,["abc",40]]; })
+add(10)
+add()
+add(10,20,30,40,50)
+add(function(){ return [function(){ return [10,20];},function(){ return [30,["abc",40]]; }]; })
+
+
+function add(x,y){
+    if (typeof x !== 'number' || typeof y !== 'number')
+        throw new Error('Invalid arguments(s)');
+    return x + y;
+}
+
+function add(){
+    function parseArg(n){
+        if (typeof n === 'function') return parseArg(n());
+        if (Array.isArray(n)) return add.apply(undefined, n);
+        return isNaN(n) ? 0 : parseInt(n,10);
+    }
+    return arguments.length <= 1 ? parseArg(arguments[0]) : parseArg(arguments[0]) + add(Array.prototype.slice.call(arguments,1));
+}
+
+
+var x : number = 100;
+
+function add(x : number,y : number) : number {
+    return x + y;
+}
+
+const add = (x,y) =>  x + y;
+add('10', '20')
+
+    |
+    |
+    V
+    tsc
+    |
+    V
+
+var x = 100;
+
+function add(x y)  {
+    return x + y;
+}
+
+typescript, coffeescript
+
+arrow functions
+classes
+enums
+interfaces
+let
+
+typescript = superset of javascript
+
+www.typescriptlang.org
+
+
+Angular
+    Synchronizing Model and Views
+
+
+Component
+    Encapsulation of Presentation + UI Behavior + UI State
+    Application = Composition of Components
+
+Pipe
+    data transformation logic for presentation
+
+Directive
+    Low level dom manipulation
+
+Service
+    Non UI responibility
+
+Module
+    Registry of application entities (components, Pipes, Directives, Services)
+    Dependency Injection
+        Dependency Inversion Principle
+    Application initialization starts with a Module
+        Therefore, there has to be a minimum of 1 module in any application
+
+
+ES6 Modules
+    * Everything defined in a file (JS/TS) is considered private
+    * Any public entitiles have to be 'exported' explicitly
+    * Using any entity from another file has to be explicitly 'imported'
+
+SOLID
+
+SRP - Single Responsibility Principle
+OCP - Open Closed Principle
+LSP - Liskov's Substitution Principle
+ISP - Interface Seggregation Principle
+DIP - Dependency Inversion Principle
+
+Agile Principles Patterns and Practices
+By Robert.C.Martin
+
+
+class A{
+    A(b B){
+        this.b = b;
+    }
+    m1(){
+        this.b.m2()
+        
+    }
+}
+
+class B{
+
+}
+
+h1
+h2
+div
+span
+input
