@@ -1,0 +1,18 @@
+<h1>Calculator</h1>
+<hr>
+<ion-input 
+    type="number" 
+    [(ngModel)]="n1"
+    clear-input="true"></ion-input>
+
+<ion-input 
+    type="number" 
+    [(ngModel)]="n2"
+    clear-input="true"
+></ion-input>
+
+<ion-button (click)="onAddClick()"> + </ion-button>
+<ion-button (click)="onSubtractClick()"> - </ion-button>
+<ion-button (click)="onMultiplyClick()"> X </ion-button>
+<ion-button (click)="onDivideClick()"> / </ion-button>
+<p>{{result}}</p>
