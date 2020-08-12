@@ -9,7 +9,7 @@ import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { CalculatorResultComponent } from "./calculator/calculatorResult/calculatorResult.component";
 import { CalculatorService } from "./calculator/calculator.service";
-
+import { ProductsComponent } from "./products/products.component";
 
 @NgModule({
   imports: [
@@ -23,6 +23,7 @@ import { CalculatorService } from "./calculator/calculator.service";
     , GreeterComponent
     , CalculatorComponent
     , CalculatorResultComponent
+    , ProductsComponent
   ],
   providers : [
     CalculatorService

@@ -6,6 +6,10 @@ import { Component, Input } from "@angular/core";
     styleUrls : ['./calculatorResult.component.scss']
 })
 export class CalculatorResultComponent{
-    @Input('data')
+
+    @Input('data') 
     result : number = 0;
+    
+    @Input()
+    xyz : string=''
 }
