@@ -2,25 +2,25 @@
 <hr>
 <ion-input 
     type="number" 
-    [(ngModel)]="n1"
+    [(ngModel)]="calculatorService.n1"
     clear-input="true"></ion-input>
 
 <ion-input 
     type="number" 
-    [(ngModel)]="n2"
+    [(ngModel)]="calculatorService.n2"
     clear-input="true"
 ></ion-input>
 
-<ion-button (click)="onAddClick()"> + </ion-button>
-<ion-button (click)="onSubtractClick()"> - </ion-button>
-<ion-button (click)="onMultiplyClick()"> X </ion-button>
-<ion-button (click)="onDivideClick()"> / </ion-button>
+<ion-button (click)="calculatorService.add()"> + </ion-button>
+<ion-button (click)="calculatorService.subtract()"> - </ion-button>
+<ion-button (click)="calculatorService.divide()"> X </ion-button>
+<ion-button (click)="calculatorService.multiply()"> / </ion-button>
 <div class="resultContainer">
     <p 
-        [ngClass]="{positive : result >= 0, negative : result < 0}"
-        *ngIf="result !== 0 else noResult"
+        [ngClass]="{positive : calculatorService.result >= 0, negative : calculatorService.result < 0}"
+        *ngIf="calculatorService.result !== 0 else noResult"
     >
-        {{result | currency:'INR'}}
+        {{calculatorService.result | currency:'INR'}}
     </p>
     <ng-template #noResult>No Result!!</ng-template>
 </div>
