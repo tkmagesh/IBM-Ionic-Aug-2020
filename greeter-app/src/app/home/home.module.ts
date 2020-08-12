@@ -8,6 +8,9 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from "./calculator/calculator.component";
 
+import { CalculatorService } from "./calculator/calculator.service";
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +22,9 @@ import { CalculatorComponent } from "./calculator/calculator.component";
     HomePage
     , GreeterComponent
     , CalculatorComponent
+  ],
+  providers : [
+    CalculatorService
   ]
 })
 export class HomePageModule {}

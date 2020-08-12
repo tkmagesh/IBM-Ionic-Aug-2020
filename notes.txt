@@ -186,3 +186,16 @@ h2
 div
 span
 input
+
+Directives
+    Attribute Directive
+        To manipulate the attibutes of an existing dom node
+        Doesnt change the structure of the dom tree
+            i.e., doesnt add new dom nodes or remove existing dom nodes from the tree
+        used by wrapping with [ ]
+
+    Structural Directive
+        Change the strucuture of the dom tree
+            i.e., add new dom nodes to the tree or remove existing dom nodes from the tree
+        used by prefixing an *
+
