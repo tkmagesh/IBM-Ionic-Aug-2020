@@ -15,4 +15,8 @@
 <ion-button (click)="onSubtractClick()"> - </ion-button>
 <ion-button (click)="onMultiplyClick()"> X </ion-button>
 <ion-button (click)="onDivideClick()"> / </ion-button>
-<p>{{result}}</p>
+<div class="resultContainer">
+    <p [ngClass]="{positive : result >= 0, negative : result < 0}">
+        {{result}}
+    </p>
+</div>
