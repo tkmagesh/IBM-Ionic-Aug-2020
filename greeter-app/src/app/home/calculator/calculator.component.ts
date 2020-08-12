@@ -15,7 +15,7 @@ export class CalculatorComponent{
         this.calculatorService = calculatorService;
     } */
 
-    constructor(private calculatorService : CalculatorService){
+    constructor(public calculatorService : CalculatorService){
 
     }
 

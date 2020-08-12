@@ -1,0 +1,7 @@
+<div class="resultContainer">
+    <p [ngClass]="{positive : result >= 0, negative : result < 0}"
+        *ngIf="result !== 0 else noResult">
+        {{result | currency:'INR'}}
+    </p>
+    <ng-template #noResult>No Result!!</ng-template>
+</div>

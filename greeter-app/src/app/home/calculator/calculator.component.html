@@ -15,12 +15,4 @@
 <ion-button (click)="calculatorService.subtract()"> - </ion-button>
 <ion-button (click)="calculatorService.divide()"> X </ion-button>
 <ion-button (click)="calculatorService.multiply()"> / </ion-button>
-<div class="resultContainer">
-    <p 
-        [ngClass]="{positive : calculatorService.result >= 0, negative : calculatorService.result < 0}"
-        *ngIf="calculatorService.result !== 0 else noResult"
-    >
-        {{calculatorService.result | currency:'INR'}}
-    </p>
-    <ng-template #noResult>No Result!!</ng-template>
-</div>
+<app-calculator-result [data]="calculatorService.result"></app-calculator-result>

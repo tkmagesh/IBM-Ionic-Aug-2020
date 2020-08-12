@@ -7,7 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from "./calculator/calculator.component";
-
+import { CalculatorResultComponent } from "./calculator/calculatorResult/calculatorResult.component";
 import { CalculatorService } from "./calculator/calculator.service";
 
 
@@ -22,6 +22,7 @@ import { CalculatorService } from "./calculator/calculator.service";
     HomePage
     , GreeterComponent
     , CalculatorComponent
+    , CalculatorResultComponent
   ],
   providers : [
     CalculatorService
