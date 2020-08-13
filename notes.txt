@@ -141,6 +141,7 @@ Directive
 
 Service
     Non UI responibility
+    By Default, a service instance within a module will be singleton
 
 Module
     Registry of application entities (components, Pipes, Directives, Services)
@@ -199,3 +200,9 @@ Directives
             i.e., add new dom nodes to the tree or remove existing dom nodes from the tree
         used by prefixing an *
 
+
+Module
+    Component1
+    Component2
+
+    Service1

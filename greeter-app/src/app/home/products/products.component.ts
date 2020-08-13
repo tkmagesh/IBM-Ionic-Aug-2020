@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import * as moment from "moment";
+
 
 interface Product{
     name : string,
@@ -14,7 +16,7 @@ interface Product{
         <ion-button (click)="onAddNewClick(txtProductName.value)">Add New</ion-button>
         <ol>
             <li *ngFor="let product of products">
-                {{product.name}} - [{{product.createdAt | date:'dd-MMM-yyyy hh:mm:ss a'}}]
+                {{product.name}} - [{{ getElapsed(product.createdAt)}}]
             </li>
         </ol>
     `
@@ -31,5 +33,9 @@ export class ProductsComponent{
             createdAt : new Date()
         } 
         this.products.push(newProduct);
+    }
+
+    getElapsed(date : Date){
+        return moment(date).fromNow();
     }
 }
