@@ -10,6 +10,7 @@ import { CalculatorComponent } from "./calculator/calculator.component";
 import { CalculatorResultComponent } from "./calculator/calculatorResult/calculatorResult.component";
 import { CalculatorService } from "./calculator/calculator.service";
 import { ProductsComponent } from "./products/products.component";
+import { ElapsedPipe } from "./products/elapsed.pipe";
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ProductsComponent } from "./products/products.component";
     , CalculatorComponent
     , CalculatorResultComponent
     , ProductsComponent
+    , ElapsedPipe
   ],
   providers : [
     CalculatorService

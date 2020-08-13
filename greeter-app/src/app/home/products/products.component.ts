@@ -16,7 +16,8 @@ interface Product{
         <ion-button (click)="onAddNewClick(txtProductName.value)">Add New</ion-button>
         <ol>
             <li *ngFor="let product of products">
-                {{product.name}} - [{{ getElapsed(product.createdAt)}}]
+                {{product.name}} - [{{ product.createdAt | elapsed }}]
+                <!-- {{product.name}} - [{{ getElapsed(product.createdAt) }}] -->
             </li>
         </ol>
     `
@@ -36,6 +37,7 @@ export class ProductsComponent{
     }
 
     getElapsed(date : Date){
+        console.log('getElapsed invoked');
         return moment(date).fromNow();
     }
 }
