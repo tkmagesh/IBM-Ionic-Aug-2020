@@ -5,9 +5,8 @@ import * as moment from 'moment';
     name: 'elapsed'
 })
 export class ElapsedPipe implements PipeTransform{
-    transform(data : Date) : string {
-        console.log('elapsed.transform triggered');
-        return moment(data).fromNow();
+    transform(data : Date, format : boolean = true) : string {
+        return format ? moment(data).fromNow() : data.toUTCString(); 
     }
     
 }
