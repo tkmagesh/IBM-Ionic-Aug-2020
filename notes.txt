@@ -206,3 +206,70 @@ Module
     Component2
 
     Service1
+
+Observable X Enumerable
+    Enumberable = Lazy Iterable
+
+Iterable
+
+var nos = [3,1,4,2,5]
+
+for(var index = 0, count = nos.length; index < count; index++){
+    var no = nos[index];
+
+}
+
+
+
+products
+    id, name, unitCost, units, category
+
+find the first 10 stationary products whose value  is less than 100
+    where value = unitCost * units
+
+products
+    .filter(p => p.category === 'stationary')
+    .map(p => ({ ...p, value : p.unitCost * p.units }))
+    .filter(p => p.value < 100)
+    .first(10)
+
+
+Enumerable
+    = collection that already has the data
+
+observable
+    = that will get data in future
+    onNext(fn)
+
+    the data becomes available in future across a time line
+
+Engineers specialized Java with min 5 Years experience from Bangalore
+    1 : 10
+3000
+    30 positions
+    300 to be interviewed
+
+
+Event Driven Applications
+
+Employee.dat
+    id,name,doj,salary
+
+var empCount, sumOfSalary
+open the file
+while(!eof()){
+    read line
+    parse line
+    ++empCount;
+    sumOfSalary += salary
+}
+avgSalary = sumOfSalary / empCount
+close file
+
+Rx.NET.
+    Reactive Extensions
+    reactivex.io
+
+json-server
+
+npx json-server db.json

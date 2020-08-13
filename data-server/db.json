@@ -1,0 +1,7 @@
+{
+    "products" : [
+        {"id" : 1, "name" : "Pen", "cost":10, "category" : "stationary"},
+        {"id" : 2, "name" : "Pencil", "cost":5, "category" : "stationary"},
+        {"id" : 3, "name" : "Marker", "cost":50, "category" : "stationary"}
+    ]
+}
