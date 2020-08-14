@@ -15,7 +15,8 @@ import { ProductsApi } from "./productsApi.service";
         <ng-template #productsList>
             <ol>
                 <li *ngFor="let product of products">
-                    {{product.name}} - [{{ product.createdAt | elapsed:true }}]
+                    <span>{{product.name}} - [{{ product.createdAt | elapsed:true }}]</span>
+                    <ion-button> [X] </ion-button>
                     <!-- {{product.name}} - [{{ getElapsed(product.createdAt) }}] -->
                 </li>
             </ol>
