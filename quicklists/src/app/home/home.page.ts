@@ -22,7 +22,6 @@ export class HomePage implements OnInit {
     this.storage.get("introShown").then(result => {
       if (result == null) {
         this.storage.set("introShown", true);
-        this.navCtrl.navigateRoot("/intro");
       }
     });
   }
