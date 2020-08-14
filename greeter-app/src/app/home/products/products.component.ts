@@ -1,11 +1,8 @@
 import { Component } from "@angular/core";
+
 import * as moment from "moment";
-
-
-interface Product{
-    name : string,
-    createdAt : Date
-}
+import { Product } from "./Product";
+import { ProductsApi } from "./productsApi.service";
 
 @Component({
     selector : 'app-products',
@@ -19,22 +16,28 @@ interface Product{
         <ion-label>Format</ion-label>
         <ol>
             <li *ngFor="let product of products">
-                {{product.name}} - [{{ product.createdAt | elapsed:shouldFormat }}]
+                {{product.name}} - [{{ product.createdAt | elapsed:true }}]
                 <!-- {{product.name}} - [{{ getElapsed(product.createdAt) }}] -->
             </li>
         </ol>
     `
 })
 export class ProductsComponent{
+
+    
     shouldFormat : boolean = false;
 
-    products : Product[] = [
-        { name : 'Pen', createdAt : new Date('10-Mar-2019')},
-        { name: 'Pencil', createdAt: new Date('10-Jul-2020') }
-    ];
+    products : Product[] = [];
+
+    constructor(private productsApi: ProductsApi) {
+        this.productsApi
+            .getAll()
+            .subscribe(products => this.products = products);
+    }
 
     onAddNewClick(newProductName : string){
         const newProduct : Product = {
+            id : 0,
             name : newProductName,
             createdAt : new Date()
         } 

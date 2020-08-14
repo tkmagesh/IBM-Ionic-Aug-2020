@@ -32,3 +32,12 @@
 
     window['addAsyncClient'] = addAsyncClient;
 })();
+
+/* 
+1. callback
+2. event 
+3. promise
+4. async await
+5. generators
+6. observables
+*/
