@@ -15,8 +15,8 @@ import { ProductsApi } from "./productsApi.service";
         <ng-template #productsList>
             <ol>
                 <li *ngFor="let product of products">
-                    <span>{{product.name}} - [{{ product.createdAt | elapsed:true }}]</span>
-                    <ion-button> [X] </ion-button>
+                    <ion-label>{{product.name}} - [{{ product.createdAt | elapsed:true }}]</ion-label>
+                    <ion-button (click)="onDeleteClick(product)"> [X] </ion-button>
                     <!-- {{product.name}} - [{{ getElapsed(product.createdAt) }}] -->
                 </li>
             </ol>
@@ -46,6 +46,14 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(){
 
+    }
+
+    onDeleteClick(product : Product){
+        this.productsApi
+            .remove(product)
+            .subscribe(() => {
+                this.products = this.products.filter(p => p !== product);
+            });
     }
 
     onAddNewClick(newProductName : string){
